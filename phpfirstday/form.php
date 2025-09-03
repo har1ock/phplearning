@@ -6,6 +6,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 <form method = "post">
-    <input type="text" name="name" placeholder="Введітьь ім'я">
+    <input type="text" name="name" placeholder="Введіть ім'я">
     <button type="submit">Відправити</button>
 </form>
