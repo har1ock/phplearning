@@ -28,3 +28,5 @@ foreach($numbers as $number){
     $mult *= $number;
 }
 echo $mult;
+
+?>
