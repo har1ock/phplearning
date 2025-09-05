@@ -16,9 +16,20 @@
 
     require_once 'Shape.php';
     $rect1 = new Rectangle(15, 10);
+    $rect2 = new Rectangle(25, 30);
     echo $rect1->area() . "<br>";
     $tria1 = new Triangle(20, 25);
-    echo $tria1->area() . "<br>"
+    $tria2 = new Triangle(15, 25);
+    echo $tria1->area() . "<br>";
+
+    $shapes = [$rect1, $rect2, $tria1, $tria2];
+    
+    $totalArea = 0;
+    foreach($shapes as $shape){
+        $totalArea +=$shape->area();
+        echo $totalArea . "<br>";
+    }
+    echo $totalArea;
     ?>
 
 </body>
