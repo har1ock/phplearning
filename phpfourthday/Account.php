@@ -11,7 +11,13 @@ class Account{
     }
     
     public function setOwner(string $owner): void {
-        $this->owner = trim($owner);
+        $owner = trim($owner);
+        if($owner === ''){
+            throw new InvalidArgumentException(
+                "Ім'я власника не може бути порожнім");
+        }
+        $this->owner = $owner;
+
     }
     
     public function setBalance(float $balance): void {
