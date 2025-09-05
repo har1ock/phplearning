@@ -2,7 +2,7 @@
 class Account{
 
     public const MIN_BALANCE = 0;
-    private string $owner;
+    private readonly string $owner;
     private float $balance = 0;
 
     public function __construct(string $owner, float $balance){
@@ -22,17 +22,28 @@ class Account{
         $this->balance = $balance;
     }
     public function deposit(float $sum): float {
-        $this->balance = $this->balance + $sum;
+        if($sum <= 0){
+            throw new InvalidArgumentException(
+                "Сума поповнення повинна бути більшою за 0");
+        }
+        $this->balance += $sum;
         return $this->balance;
     }
   
     public function withdraw(float $sum): float { 
-        $this->balance = $this->balance - $sum;
+        if($sum > $this->balance){
+            throw new InvalidArgumentException(
+                "Недостатньо коштів на рахунку");
+        }
+        $this->balance -= $sum;
         return $this->balance;
     }
     
     public function getBalance(): float {
         return $this->balance;
+    }
+    public function getOwner(): string {
+        return $this->owner;
     }
 }
 ?>
