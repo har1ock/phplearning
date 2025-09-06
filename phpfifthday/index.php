@@ -16,6 +16,17 @@
 
     $alert2 = new AlertService($smsNotifier);
     $alert2->critical("Термінове повідомлення!");
+
+
+    require_once 'Logger.php';
+    $fileLogger = new FileLogger();
+    $databaseLogger = new DatabaseLogger();
+
+    $log1 = new Application($fileLogger);
+    $log1->run("123");
+
+    $log2 = new Application($databaseLogger);
+    $log2->run("123");
     ?>
 </body>
 </html>
