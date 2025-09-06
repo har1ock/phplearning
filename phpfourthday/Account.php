@@ -4,10 +4,12 @@ class Account{
     public const MIN_BALANCE = 0;
     private readonly string $owner;
     private float $balance = 0;
+    private static int $count = 0;
 
     public function __construct(string $owner, float $balance){
         $this->setOwner($owner);
         $this->setBalance($balance);
+        self::$count++;
     }
     
     public function setOwner(string $owner): void {
@@ -50,6 +52,10 @@ class Account{
     }
     public function getOwner(): string {
         return $this->owner;
+    }
+    
+    public static function count(): int {
+        return self::$count;
     }
 }
 ?>

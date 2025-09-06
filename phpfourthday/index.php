@@ -9,6 +9,13 @@
     <?php
     require_once 'Account.php';
     $acc1 = new Account('George', 200);
+    echo Account::count() . "<br>";
+    $acc2 = new Account('Marin', 400);
+    echo Account::count() . "<br>";;
+    $acc3 = new Account(' Bob ', 500);
+    $acc4 = new Account('Tom', 23100);
+    $acc5 = new Account('Rom', 100);
+    echo Account::count() . "<br>";;
     $acc1->deposit(150);
     $acc1->withdraw(300);
     echo $acc1->getBalance() . "<br>";
