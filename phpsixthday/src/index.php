@@ -11,10 +11,16 @@
 
     use App\Models\User;
     use App\Services\Auth;
+    use App\Utils\Math;
 
     $user = new User("Bob");
     $auth = new Auth();
-    $auth->login($user)
+    $auth->login($user);
+    $math = new Math();
+    $numbers = [1, 2, 3, 4, 5];
+    $result =  $math->sum($numbers);
+    echo $result;
+
     ?>
 </body>
 </html>
