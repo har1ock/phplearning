@@ -26,7 +26,7 @@ function next_id(array $tasks): int {
     return $max + 1;
 }
 
-function list_task(array $tasks): void{
+function list_tasks(array $tasks): void{
     if (empty($tasks)){
         echo "Список задань порожній.\n";
         return;
